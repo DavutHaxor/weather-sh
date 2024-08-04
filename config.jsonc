@@ -21,6 +21,5 @@
     "snow.3h":""
   },
   
-  "units":"metric",
-  "_comment":"Other unit types are: standart, imperial. Check OpenWeather docs for detail."
+  "units":"metric" //Other unit types are: standart, imperial. Check OpenWeather docs for detail.
 }
