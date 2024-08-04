@@ -1,0 +1,25 @@
+{
+  "required":{ 
+    "latitude":" ", 
+    "longitude":" ",
+    "api_key":" "
+  },
+
+  "display":{
+    "city":"true",
+    "temperature":"true",
+    "feels_like":"true",
+    "pressure":"false",
+    "humidity":"true",
+    "wind":{
+      "speed":"false",
+      "direction":"false"
+    },
+    "rain.1h":"false",
+    "rain.3h":"false",
+    "snow.1h":"false",
+    "snow.3h":"false"
+  },
+  
+  "units":"metric"
+}
