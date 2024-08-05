@@ -108,7 +108,7 @@ if $display_city; then
 fi
 
 if $display_description; then
-  jq -rj
+  (jq -rf '.weather.0.description' $database) # This one doesnt display in proper words
 fi
 
 if $display_temp; then
@@ -155,6 +155,38 @@ if $display_humidity; then
   (jq -rf '.main.humidity' $database) && echo " % humidity"
 fi
 
- 
+if $display_wind_speed; then
+  case $units in
+
+    "standart" | "metric")
+    echo -n "Wind speed is " && (jq -rf '.wind.speed' $database) && " km/h"
+    ;;
+
+    "imperial")
+    echo -n "Wind speed is " && (jq -rf '.wind.speed' $database) && " mph"
+    ;;
+
+  esac
+fi
+
+if $display_wind_direction; then
+  echo -n "Wind direction is " && (jq -rf '.main.wind.direction' $database) && " degree"
+fi
+
+if $display_rain_1h; then
+  echo -n "Rain for the last 1 hour is " && (jq -rf 'main.rain.1h') && echo " mm"
+fi
+
+if $display_rain_3h; then
+  echo -n "Rain for the last 3 hours is " && (jq -rf 'main.rain.3h') && echo " mm"
+fi
+
+if $display_snow_1h; then
+  echo -n "Snow for the last 1 hour is " && (jq -rf 'main.snow.1h') && echo " mm"
+fi
+
+if $display_snow_3; then
+  echo -n "Snow for the last 3 hour is " && (jq -rf 'main.snow.3h') && echo " mm"
+fi
 
 
