@@ -96,7 +96,7 @@ fi
 # The section to read config file is over
 #
 # This section is to parse json from OpenWeather and assign values to variables
-
+#
 # Curl the desired location
 
 database=".weather_data/data.json"
