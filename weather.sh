@@ -174,19 +174,19 @@ if $display_wind_direction; then
 fi
 
 if $display_rain_1h; then
-  echo -n "Rain for the last 1 hour is " && (jq -rj '.main.rain.1h' $database) && echo " mm"
+  echo -n "Rain for the last 1 hour is " && (jq -rj '.rain.1h' $database) && echo " mm"
 fi
 
 if $display_rain_3h; then
-  echo -n "Rain for the last 3 hours is " && (jq -rj '.main.rain.3h' $database) && echo " mm"
+  echo -n "Rain for the last 3 hours is " && (jq -rj '.rain.3h' $database) && echo " mm"
 fi
 
 if $display_snow_1h; then
-  echo -n "Snow for the last 1 hour is " && (jq -rj '.main.snow.1h' $database) && echo " mm"
+  echo -n "Snow for the last 1 hour is " && (jq -rj '.snow.1h' $database) && echo " mm"
 fi
 
 if $display_snow_3h; then
-  echo -n "Snow for the last 3 hour is " && (jq -rj '.main.snow.3h' $database) && echo " mm"
+  echo -n "Snow for the last 3 hour is " && (jq -rj 'snow.3h' $database) && echo " mm"
 fi
 
 
