@@ -158,19 +158,19 @@ fi
 if $display_wind_speed; then
   case $units in
 
-    "standart" | "metric")
-    echo -n "Wind speed is " && (jq -rj '.wind.speed' $database) && " km/h"
+    "standart"|"metric")
+    echo -n "Wind speed is " && (jq -rj '.wind.speed' $database) && echo " km/h"
     ;;
 
     "imperial")
-    echo -n "Wind speed is " && (jq -rj '.wind.speed' $database) && " mph"
+    echo -n "Wind speed is " && (jq -rj '.wind.speed' $database) && echo " mph"
     ;;
 
   esac
 fi
 
 if $display_wind_direction; then
-  echo -n "Wind direction is " && (jq -rj '.main.wind.direction' $database) && " degree"
+  echo -n "Wind direction is " && (jq -rj '.wind.deg' $database) && echo " degree"
 fi
 
 if $display_rain_1h; then
