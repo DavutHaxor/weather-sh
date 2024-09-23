@@ -7,8 +7,10 @@
 
   "display":{
     "city":"true",
+    "short_description":"false",
+    "description":"true",
     "temperature":"true",
-    "feels_like":"true",
+    "feels_like":"false",
     "pressure":"false",
     "humidity":"true",
     "wind":{
